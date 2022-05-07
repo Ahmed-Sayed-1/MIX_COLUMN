@@ -84,30 +84,30 @@ public class MIX_COLUMNS {
     //multiply two binary numper in FINITE FIELDS  GF(2^8)
 
     static String mul(String g, String f) {
-        String HexKEY = f;
+        String temp = f;
         String arr[] = new String[8];
-        String mod = "00011011";
+        String mod = "00011011";//x^8+x^4+x^3+x+1
         arr[0] = f;
         for (int i = 1; i < 8; i++) {
 
-            if (HexKEY.charAt(0) == '0') {
-                HexKEY = HexKEY.substring(1) + "0";
-                arr[i] = HexKEY;
+            if (temp.charAt(0) == '0') {
+                temp = temp.substring(1) + "0";
+                arr[i] = temp;
             } else {
-                HexKEY = HexKEY.substring(1) + "0";
-                HexKEY = XOR(HexKEY, mod);
-                arr[i] = HexKEY;
+                temp = temp.substring(1) + "0";
+                temp = XOR(temp, mod);
+                arr[i] = temp;
             }
         }
 
-        HexKEY = "00000000";
+        temp = "00000000";
         for (int i = 0; i < 8; i++) {
             if (g.charAt(7 - i) == '1') {
-                HexKEY = XOR(HexKEY, arr[i]);
+                temp = XOR(temp, arr[i]);
             }
         }
 
-        return HexKEY;
+        return temp;
 
     }
 
