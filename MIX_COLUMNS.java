@@ -34,14 +34,14 @@ public class MIX_COLUMNS {
         
     }
 
-    static String ToBinary(String Key) {
-        String Key_bin = "";
+    static String ToBinary(String HEX_Num) {
+        String bin_num = "";
         String Temp;
         int Value;
         String zeros;
 
-        for (int i = 0; i < Key.length(); i++) {
-            Value = Integer.parseInt(Key.substring(i, i + 1), 16);
+        for (int i = 0; i < HEX_Num.length(); i++) {
+            Value = Integer.parseInt(HEX_Num.substring(i, i + 1), 16);
             Temp = Integer.toBinaryString(Value);
             zeros = "";
             while (Temp.length() != 4) {
@@ -50,35 +50,35 @@ public class MIX_COLUMNS {
                     Temp = zeros + Temp;
                 }
             }
-            Key_bin += Temp;
+            bin_num += Temp;
 
         }
-        return Key_bin;
+        return bin_num;
 
     }
 
     static String XOR(String text1, String text2) {
-        String Permutation = "";
+        String result = "";
 
         for (int i = 0; i < text2.length(); i++) {
             if (text2.charAt(i) == text1.charAt(i)) {
-                Permutation += "0";
+                result += "0";
             } else {
-                Permutation += "1";
+                result += "1";
             }
         }
 
-        return Permutation;
+        return result;
 
     }
 
-    static String ToHex(String bin_KEY) {
-        String HexKEY = "";
-        for (int i = 0; i < bin_KEY.length() / 4; i++) {
-            HexKEY += Integer.toHexString(Integer.parseInt(bin_KEY.substring(i * 4, i * 4 + 4), 2));
+    static String ToHex(String bin_num) {
+        String Hex_Num = "";
+        for (int i = 0; i < bin_num.length() / 4; i++) {
+            Hex_Num += Integer.toHexString(Integer.parseInt(bin_num.substring(i * 4, i * 4 + 4), 2));
         }
 
-        return HexKEY;
+        return Hex_Num;
 
     }
     //multiply two binary numper in FINITE FIELDS  GF(2^8)
