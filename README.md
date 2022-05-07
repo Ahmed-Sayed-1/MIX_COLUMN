@@ -1,2 +1,2 @@
-# automatic-system
+# MIX_COLUMNS
 AES_MIX_COLUMNS
