@@ -1,14 +1,7 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package mix_columns;
 
-/**
- *
- * @author ahmed
- */
+
 public class MIX_COLUMNS {
 
    static String[][] MIX_Matrix = {{"02", "03", "01", "01"},
